@@ -1,0 +1,37 @@
+<head>
+<?= $this->headLink()->appendStylesheet('/media/css/style.css') ?>
+</head>
+<body>
+	<div id="header">
+	    <h1>Click Store</h1>
+	    <div><a href="<?php echo $this->url(
+			  					array("controller" => "cart", "action" => "index"),null,true)?>">
+							Carrinho
+						</a></div>
+	</div>
+	<div id="wrapper">
+		
+		<div id="menu">
+		    <ul>
+		    	<li><a href="<?php echo $this->url(array("controller" => "product", "action" => "index"),null,true)?>"> Todos </a>
+
+		        <?php foreach ($this->categories as $category): ?>
+		            <li>
+		            	<a href="<?php echo $this->url(
+			  					array("controller" => "product", "action" => "category", "id"=>$category->id ))?>">
+							<?php echo $category->name ?>
+						</a>
+		            </li>
+		        <?php endforeach ?>
+		    </ul>
+		</div>
+
+		<?php echo $this->layout()->content; ?>
+	</div>
+
+	<div id="footer">
+		&#169; Marcela Ortega 
+	</div>
+
+	<?php echo $this->jQuery();?>
+</body>

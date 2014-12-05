@@ -1,0 +1,16 @@
+<h2>Meu carrinho</h2>
+
+<div id="product_list">
+	<?php 
+	if(empty($this->products)) 
+			echo 'Carrinho vazio :('; 
+	else 
+		echo $this->partial('partials/product_list.phtml', array('products' => $this->products)); 
+	?>
+</div>
+
+<div id="actions">
+	<a href="<?php echo $this->url(array("controller" => "cart", "action" => "cancel"),null,true)?>">
+		Limpar
+	</a>
+</div>

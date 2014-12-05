@@ -1,0 +1,5 @@
+<h2>Produtos - <?php echo $this->category->name ?></h2>
+
+<div id="product_list">
+	<?php echo $this->partial('partials/product_list.phtml', array('products' => $this->products)); ?>
+</div>
