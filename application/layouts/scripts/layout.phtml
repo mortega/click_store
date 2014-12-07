@@ -1,16 +1,19 @@
 <head>
-<?= $this->headLink()->appendStylesheet('/media/css/style.css') ?>
+	<?= $this->headLink()->appendStylesheet('/media/css/style.css') ?>
 </head>
 <body>
 	<div id="header">
-	    <h1>Click Store</h1>
-	    <div><a href="<?php echo $this->url(
-			  					array("controller" => "cart", "action" => "index"),null,true)?>">
-							Carrinho
-						</a></div>
+		<div id="header_content">
+			<a href="/"><div id="logo"></div></a>
+		    <div class="cart">
+		    	<a href="<?php echo $this->url(array("controller" => "cart", "action" => "index"),null,true)?>">
+					Meu Carrinho
+				</a>
+			</div>
+		</div>
 	</div>
+
 	<div id="wrapper">
-		
 		<div id="menu">
 		    <ul>
 		    	<li><a href="<?php echo $this->url(array("controller" => "product", "action" => "index"),null,true)?>"> Todos </a>
@@ -27,6 +30,7 @@
 		</div>
 
 		<?php echo $this->layout()->content; ?>
+
 	</div>
 
 	<div id="footer">

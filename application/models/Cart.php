@@ -21,6 +21,16 @@ class Application_Model_Cart
         return true;
     }
 
+    public function deleteItem($product_id)
+    {
+        if(empty($product_id) || empty($this->_items[$product_id]))
+            return false;
+
+        $this->_total -= $this->_items[$product_id];
+        unset($this->_items[$product_id]);
+        return true;
+    }
+
     public function getItems(){
         return $this->_items;
     }

@@ -42,11 +42,11 @@ class CartController extends Zend_Controller_Action
         exit;
     }
 
-    public function deleteAction()
+    public function delAction()
     {
         $id = $this->_getParam('id', 1);
         $res = $this->_cartNamespace->cart->deleteItem($id);
-        $this->_helper->json->sendJson($res);
+        $this->_redirect('/cart');
     }
 
     public function cancelAction()

@@ -1,0 +1,47 @@
+/*
+Products
+*/
+
+#product_list li {
+    width: 180px;
+    height: 180px;
+    margin: 7px; 
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align:top;  
+    padding: 10px;
+}
+
+#product_list li a {
+	display: block;
+}
+
+#product_list li img{
+	width: 100px;
+}
+
+.name{
+	height: 40px;
+}
+.description{
+	display: none;
+}
+.price{
+	padding-top: 5px;
+	text-align: center;
+}
+
+.add_cart{
+	padding-top: 10px;
+	text-align: center;
+}
+
+.remove_cart{
+	display: none;
+}
+
+.img{
+	text-align: center;
+	min-height: 100px;
+}
+

@@ -1,6 +1,20 @@
-<br /><br />
+<?php $imgs_path = "https://raw.githubusercontent.com/mortega/images/master/click_store/" ?>
+
 <div id="view-content">
-	<h1><? echo $this->product->name ?></h1>
-	<? echo $this->product->description ?>
-	<? echo $this->product->price ?>
+	<h2><? echo $this->product->name ?></h2>
+
+	<div class="product_img">
+		<img src="<? echo $imgs_path . $this->product->img ?>" >
+	</div>
+	<div class="product_side">
+		Preço: R$<? echo $this->product->price ?>
+		<br/><br/>
+		<?php echo $this->ajaxLink(" &#187; Adicionar ao carrinho", "/cart/add/id/{$product->id}");?>
+	</div>
+	<div class="product_details">
+		<? echo $this->product->description ?>
+		<br/><br/>
+		
+	</div>
+	
 </div>

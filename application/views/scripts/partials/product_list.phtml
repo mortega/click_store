@@ -1,13 +1,30 @@
-
+<?php $imgs_path = "https://raw.githubusercontent.com/mortega/images/master/click_store/" ?>
 	<ul>
 		<?php foreach ($this->products as $product): ?>
             	<li>
-					<?php echo $product->name ?>
-					<br/>
-					<?php echo $product->description ?>
-					<br/>
-					<?php echo $this->ajaxLink("Adicionar ao carrinho",
-                    "/cart/add/id/{$product->id}");?>
+            		<div class="main_info">
+	            		<a href="<?php echo $this->url(array("controller" => "product", "action" => "view", "id" => $product->id),null,true)?>">
+		            		<div class="name"> <?php echo $product->name ?> </div>
+		            		<div class="img">
+		            			<img src="<? echo $imgs_path . $product->img ?>" >
+		            		</div>
+						</a>
+					</div>
+					<div class="details">
+						<div class="description"> <?php echo $product->description ?></div>
+						<div class="price">R$ <?php echo $product->price ?></div>
+					</div>
+					
+					<div class="actions">
+						<div class="add_cart">
+							<?php echo $this->ajaxLink(" &#187; Adicionar ao carrinho", "/cart/add/id/{$product->id}");?>
+						</div>
+						<div class="remove_cart">
+							<a href="<?php echo $this->url(array("controller" => "cart", "action" => "del", "id" => $product->id),null,true)?>">
+								Remover do carrinho
+							</a>
+						</div>
+					</div>
             	</li>
             
         <?php endforeach ?>

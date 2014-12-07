@@ -1,3 +1,4 @@
+<?= $this->headLink()->appendStylesheet('/media/css/products_cart.css') ?>
 <h2>Meu carrinho</h2>
 
 <div id="product_list">
@@ -11,6 +12,6 @@
 
 <div id="actions">
 	<a href="<?php echo $this->url(array("controller" => "cart", "action" => "cancel"),null,true)?>">
-		Limpar
+		Limpar carrinho
 	</a>
 </div>

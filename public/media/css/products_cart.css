@@ -1,0 +1,55 @@
+/*
+Products
+*/
+
+#product_list li {
+    height: 120px;
+     border-bottom: 1px solid #ccc;
+     margin-bottom: 20px;
+     padding: 20px
+}
+
+#product_list li a {
+	display: inline-block;
+}
+
+#product_list li img{
+	width: 80px;
+}
+
+.main_info{
+	display: inline-block;	
+}
+.name{
+	max-width: 120px;
+}
+
+.details {
+	display: inline-block;	
+	margin-left: 10px;
+	width: 500px;
+}
+.description{
+	margin-bottom: 20px;
+}
+.price{
+
+}
+
+.actions {
+	display: inline-block;	
+	margin-left: 50px;
+}
+.add_cart{
+	display: none;
+}
+
+.remove_cart{
+
+}
+
+.img{
+	display: inline-block;
+	min-height: 80px;
+	text-align: center;
+}
