@@ -63,5 +63,24 @@ class CartController extends Zend_Controller_Action
         $this->_redirect('/cart');
     }
 
+    public function closeAction(){
+        $order = new Application_Model_Order();
+        $form = $order->getForm();
+        $this->view->form = $form;
+        $this->view->closed = false;  
+
+        if ($this->getRequest()->isPost()) {
+            $this->view->closed = true;  
+            if($form->isValid($_POST)){
+                $res = $order->create($_POST['user_name'], $_POST['user_email'], $this->_cartNamespace->cart->getItems());
+                
+                if(!empty($res)){
+                    $this->_cartNamespace->cart->clean();  
+                    $this->view->order_status = true;  
+                }
+            }
+        }
+
+    }
 }
 

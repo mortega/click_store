@@ -1,0 +1,22 @@
+
+<?php if($this->form)
+	echo $this->form;
+?>
+	
+
+<?php if($this->closed && $this->order_status): ?>
+	<h2>Venda concluida!</h2>
+
+	<div>
+		Obrigado!
+	</div>
+
+<?php elseif($this->closed) : ?>
+	<h2>Ops!</h2>
+
+	<div>
+		Algum erro aconteceu!
+	</div>
+
+<?php endif; ?>
+

@@ -32,3 +32,24 @@ CREATE TABLE `clickstore`.`products_categories` (
     FOREIGN KEY (`category_id`)
     REFERENCES `clickstore`.`categories` (`id`)
 );
+
+#Orders
+CREATE TABLE `clickstore`.`orders` (
+ `id` INT NOT NULL AUTO_INCREMENT,
+ `user_name` VARCHAR(100) NOT NULL,
+ `user_email` VARCHAR(100) NOT NULL,
+ `total` DECIMAL(10,2) NOT NULL DEFAULT 0,
+ `created` TIMESTAMP,
+ `modified` TIMESTAMP,
+PRIMARY KEY (`id`));
+
+#Products Orders
+CREATE TABLE `clickstore`.`products_orders` (
+  `order_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `created` TIMESTAMP,
+  `modified` TIMESTAMP,
+  PRIMARY KEY (`order_id`, `product_id`)
+);
+

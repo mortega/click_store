@@ -14,8 +14,14 @@
 	<?php echo "Total: R$" . $this->total; ?>
 </div>
 
+<?php if(!empty($this->products)) : ?>
 <div id="actions">
 	<a href="<?php echo $this->url(array("controller" => "cart", "action" => "cancel"),null,true)?>">
 		Limpar carrinho
 	</a>
+
+	<a href="<?php echo $this->url(array("controller" => "cart", "action" => "close"),null,true)?>">
+		Concluir compra
+	</a>
 </div>
+<?php endif; ?>
