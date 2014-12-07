@@ -9,7 +9,7 @@
 	<div class="product_side">
 		Preço: R$<? echo $this->product->price ?>
 		<br/><br/>
-		<?php echo $this->ajaxLink(" &#187; Adicionar ao carrinho", "/cart/add/id/{$product->id}");?>
+		<?php echo $this->ajaxLink(" &#187; Adicionar ao carrinho", "/cart/add/id/" . $this->product->id);?>
 	</div>
 	<div class="product_details">
 		<? echo $this->product->description ?>

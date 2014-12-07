@@ -6,8 +6,12 @@
 	if(empty($this->products)) 
 			echo 'Carrinho vazio :('; 
 	else 
-		echo $this->partial('partials/product_list.phtml', array('products' => $this->products)); 
+		echo $this->partial('partials/product_list.phtml', array('products' => $this->products,  'cart' => $this->cart)); 
 	?>
+</div>
+
+<div>
+	<?php echo "Total: R$" . $this->total; ?>
 </div>
 
 <div id="actions">

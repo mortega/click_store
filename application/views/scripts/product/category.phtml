@@ -2,6 +2,12 @@
 
 <h2>Produtos &#187; <span class="red_text"><?php echo $this->category->name ?></span></h2>
 
+
 <div id="product_list">
+
+	<?php if($this->totalProducts == 0) 
+		echo "Ops.. Ainda não temos produtos nessa categoria! :("
+	?>
+
 	<?php echo $this->partial('partials/product_list.phtml', array('products' => $this->products)); ?>
 </div>

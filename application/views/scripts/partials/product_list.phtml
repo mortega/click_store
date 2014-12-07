@@ -1,3 +1,4 @@
+
 <?php $imgs_path = "https://raw.githubusercontent.com/mortega/images/master/click_store/" ?>
 	<ul>
 		<?php foreach ($this->products as $product): ?>
@@ -13,6 +14,13 @@
 					<div class="details">
 						<div class="description"> <?php echo $product->description ?></div>
 						<div class="price">R$ <?php echo $product->price ?></div>
+
+						<?php if(!empty($this->cart[$product->id]) && $this->cart[$product->id] > 1): ?>
+							<div ><?php echo "Quantidade: " . $this->cart[$product->id] . 
+											 " - Total: R$" . ($this->cart[$product->id]*  $product->price )?>
+							</div>
+						<? endif ?>
+						
 					</div>
 					
 					<div class="actions">

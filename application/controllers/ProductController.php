@@ -29,6 +29,7 @@ class ProductController extends Zend_Controller_Action
     	$categoriesTable = new Application_Model_DbTable_Category();
         $category = $this->view->category = $categoriesTable->find($id)->current();
         $this->view->products = $category->getProducts();
+        $this->view->totalProducts = count($category->getProducts()->toArray());
     }
 
 

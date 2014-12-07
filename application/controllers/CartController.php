@@ -20,15 +20,23 @@ class CartController extends Zend_Controller_Action
     public function indexAction()
     {
         $cartItems = $this->_cartNamespace->cart->getItems();
- 
+
         $products_ids = array_keys($cartItems);
         $products = array();
+        $total = 0;
+
         if(!empty($products_ids)){
             $productTable = new Application_Model_DbTable_Product();
-            $products = $productTable->find($products_ids);
+            $products = $productTable->getAllByKey($products_ids);
+
+            foreach ($cartItems as $product_id => $quantity) {
+                $total += ($products[$product_id]->price * $quantity);
+            }
         }
 
+        $this->view->cart = $cartItems;
         $this->view->products = $products;
+        $this->view->total = $total;
     }
 
     public function addAction()
